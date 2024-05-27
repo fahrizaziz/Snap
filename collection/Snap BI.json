@@ -1,0 +1,782 @@
+{
+	"info": {
+		"_postman_id": "e9e73f8c-cd0b-4113-8c4e-490289e1247d",
+		"name": "Snap BI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10764435"
+	},
+	"item": [
+		{
+			"name": "VA-BCA",
+			"item": [
+				{
+					"name": "Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"grant_type\": \"client_credentials\",\r\n  \"client_id\": 1,\r\n  \"client_secret\": \"V1OjVu7UMFiymqd8htEeA84A31pSHjk4HmS3j5zQ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/oauth/public/oauth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"oauth",
+								"public",
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"grant_type\": \"client_credentials\",\r\n  \"client_id\": 1,\r\n  \"client_secret\": \"V1OjVu7UMFiymqd8htEeA84A31pSHjk4HmS3j5zQ\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/oauth/public/oauth/token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"oauth",
+										"public",
+										"oauth",
+										"token"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "221"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"dd-W2eacftDxgnE+BTanLBPP0JN9GY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Aug 2023 04:05:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 1292400,\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEiLCJzdWIiOjIsImlhdCI6MTY5MTM4MTEyNywiZXhwIjoxNjkxNDMxNTI3fQ.2wupcoxi2K07jsIo8nEYIHmPL_WIZo7K5riOyGDlfyw\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Inquiry",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEiLCJzdWIiOjIsImlhdCI6MTY5MTM4MTEyNywiZXhwIjoxNjkxNDMxNTI3fQ.2wupcoxi2K07jsIo8nEYIHmPL_WIZo7K5riOyGDlfyw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"partnerServiceId\": \"12999113131313\",\r\n    \"customerNo\": \"1234567\",\r\n    \"virtualAccountNo\": \"  9000134332351210898911\",\r\n    \"trxDateInit\": \"2022-02-12T17:29:57+07:00\",\r\n    \"channelCode\": 6011,\r\n    \"language\": \"\",\r\n    \"amount\": null,\r\n    \"hashedSourceAccountNo\": \"\",\r\n    \"sourceBankCode\": \"014\",\r\n    \"additionalInfo\": {\r\n        \"value\": \"\"\r\n    },\r\n    \"passApp\": \"\",\r\n    \"inquiryRequestId\": \"202202110909311234500001136962\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/va-bca/public/api/va/bills",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"va-bca",
+								"public",
+								"api",
+								"va",
+								"bills"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response Inquiry Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"partnerServiceId\": \"12999113131313\",\r\n    \"customerNo\": \"1234567\",\r\n    \"virtualAccountNo\": \"  9000134332351210898911\",\r\n    \"trxDateInit\": \"2022-02-12T17:29:57+07:00\",\r\n    \"channelCode\": 6011,\r\n    \"language\": \"\",\r\n    \"amount\": null,\r\n    \"hashedSourceAccountNo\": \"\",\r\n    \"sourceBankCode\": \"014\",\r\n    \"additionalInfo\": {\r\n        \"value\": \"\"\r\n    },\r\n    \"passApp\": \"\",\r\n    \"inquiryRequestId\": \"202202110909311234500001136962\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/va-bca/public/api/va/bills",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"va-bca",
+										"public",
+										"api",
+										"va",
+										"bills"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1049"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"419-qagCqbUiSQQqDf2kfCwmWodEB9k\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Aug 2023 04:08:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": \"2002400\",\n    \"responseMessage\": \"Successful\",\n    \"virtualAccountData\": {\n        \"inquirtStatus\": \"00\",\n        \"inqueryReason\": {\n            \"english\": \"Success\",\n            \"indonesia\": \"Sukses\"\n        },\n        \"partnerServiceId\": \"12345\",\n        \"customerNo\": \"123456789012345678\",\n        \"virtualAccountNo\": \"123456789012345678\",\n        \"virtualAccountName\": \"Jokul Doe\",\n        \"virtualAccountEmail\": \"john@email.com\",\n        \"virtualAccountPhone\": \"6281828384858\",\n        \"inquiryRequestId\": \"202202110909311234500001136962\",\n        \"totalAmount\": {\n            \"value\": \"100000.00\",\n            \"currency\": \"IDR\"\n        },\n        \"subCompany\": \"00000\",\n        \"billDetails\": [\n            {\n                \"billCode\": \"01\",\n                \"billNo\": \"123456789012345678\",\n                \"billName\": \"Bill A for Jan\",\n                \"billShortName\": \"Bill A\",\n                \"billDescription\": {\n                    \"english\": \"Maintance\",\n                    \"indonesia\": \"Pemeliharaan\"\n                },\n                \"billSubCompany\": \"00000\",\n                \"billAmount\": {\n                    \"value\": \"100000.00\",\n                    \"currency\": \"IDR\"\n                },\n                \"billAmountLabel\": \"Total Tagihan\",\n                \"billAmountValue\": \"Rp. 100.000,-\",\n                \"additionalInfo\": {}\n            }\n        ],\n        \"freeTexts\": [\n            {\n                \"english\": \"Free text\",\n                \"indonesia\": \"Tulisan bebas\"\n            }\n        ],\n        \"virtualAccountTrxType\": \"1\",\n        \"feeAmount\": {\n            \"value\": \"\",\n            \"currency\": \"\"\n        },\n        \"additionalInfo\": {\n            \"deviceId\": \"12345679237\",\n            \"channel\": \"mobilephone\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Response Inquiry Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"partnerServiceId\": \"12991113131313\",\r\n    \"customerNo\": \"1234567\",\r\n    \"virtualAccountNo\": \"  9000134332351210898911\",\r\n    \"trxDateInit\": \"2022-02-12T17:29:57+07:00\",\r\n    \"channelCode\": 6011,\r\n    \"language\": \"\",\r\n    \"amount\": null,\r\n    \"hashedSourceAccountNo\": \"\",\r\n    \"sourceBankCode\": \"014\",\r\n    \"additionalInfo\": {\r\n        \"value\": \"\"\r\n    },\r\n    \"passApp\": \"\",\r\n    \"inquiryRequestId\": \"202202110909311234500001136962\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/va-bca/public/api/va/bills",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"va-bca",
+										"public",
+										"api",
+										"va",
+										"bills"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "897"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"381-8vAo75auRjFj8pMi1/taZp0qziY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Aug 2023 04:09:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": \"4042412\",\n    \"responseMessage\": \"Bill not found\",\n    \"virtualAccountData\": {\n        \"inquirtStatus\": \"01\",\n        \"inqueryReason\": {\n            \"english\": \"Bill not found\",\n            \"indonesia\": \"Tagihan tidak ditemukan\"\n        },\n        \"partnerServiceId\": \"12345\",\n        \"customerNo\": \"123456789012345678\",\n        \"virtualAccountNo\": \"123456789012345678\",\n        \"virtualAccountName\": \"\",\n        \"virtualAccountEmail\": \"\",\n        \"virtualAccountPhone\": \"\",\n        \"inquiryRequestId\": \"202202110909311234500001136962\",\n        \"totalAmount\": {\n            \"value\": \"\",\n            \"currency\": \"\"\n        },\n        \"subCompany\": \"\",\n        \"billDetails\": [\n            {\n                \"billCode\": \"\",\n                \"billNo\": \"\",\n                \"billName\": \"\",\n                \"billShortName\": \"\",\n                \"billDescription\": {\n                    \"english\": \"\",\n                    \"indonesia\": \"\"\n                },\n                \"billSubCompany\": \"\",\n                \"billAmount\": {\n                    \"value\": \"\",\n                    \"currency\": \"\"\n                },\n                \"billAmountLabel\": \"\",\n                \"billAmountValue\": \"\",\n                \"additionalInfo\": {}\n            }\n        ],\n        \"freeTexts\": [\n            {\n                \"english\": \"Free text\",\n                \"indonesia\": \"Tulisan bebas\"\n            }\n        ],\n        \"virtualAccountTrxType\": \"\",\n        \"feeAmount\": {\n            \"value\": \"\",\n            \"currency\": \"\"\n        },\n        \"additionalInfo\": {\n            \"deviceId\": \"\",\n            \"channel\": \"\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEiLCJzdWIiOjIsImlhdCI6MTY5MTM4MTEyNywiZXhwIjoxNjkxNDMxNTI3fQ.2wupcoxi2K07jsIo8nEYIHmPL_WIZo7K5riOyGDlfyw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"partnerServiceId\": \"1300112345\",\r\n    \"customerNo\": \"123456789012345678\",\r\n    \"virtualAccountNo\": \"123456789012345678\",\r\n    \"virtualAccountName\": \"Jokul Doe\",\r\n    \"virtualAccountEmail\": \"\",\r\n    \"virtualAccountPhone\": \"\",\r\n    \"trxId\": \"\",\r\n    \"paymentRequestId\": \"202202111031031234500001136962\",\r\n    \"channelCode\": 6011,\r\n    \"hashedSourceAccountNo\": \"\",\r\n    \"sourceBankCode\": \"014\",\r\n    \"paidAmount\": {\r\n        \"value\": \"100000.00\",\r\n        \"currency\": \"IDR\"\r\n    },\r\n    \"cumulativePaymentAmount\": null,\r\n    \"paidBills\": \"\",\r\n    \"totalAmount\": {\r\n        \"value\": \"100000.00\",\r\n        \"currency\": \"IDR\"\r\n    },\r\n    \"trxDateTime\": \"2022-02-12T17:29:57+07:00\",\r\n    \"referenceNo\": \"00113696201\",\r\n    \"journalNum\": \"\",\r\n    \"paymentType\": \"\",\r\n    \"flagAdvise\": \"N\",\r\n    \"subCompany\": \"00000\",\r\n    \"billDetails\": [\r\n        {\r\n            \"billCode\": \"\",\r\n            \"billNo\": \"123456789012345678\",\r\n            \"billName\": \"\",\r\n            \"billShortName\": \"\",\r\n            \"billDescription\": {\r\n                \"english\": \"Maintance\",\r\n                \"indonesia\": \"Pemeliharaan\"\r\n            },\r\n            \"billSubCompany\": \"00000\",\r\n            \"billAmount\": {\r\n                \"value\": \"10000.00\",\r\n                \"currency\": \"IDR\"\r\n            },\r\n            \"additionalInfo\": {\r\n                \"value\": \"Test Additional Data\"\r\n            },\r\n            \"billReferenceNo\": \"00113696201\"\r\n        }\r\n    ],\r\n    \"freeTexts\": [],\r\n    \"additionalInfo\": {\r\n        \"value\": \"\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/va-payment/payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"va-payment",
+								"payment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response Payment Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"partnerServiceId\": \"1300012345\",\r\n    \"customerNo\": \"123456789012345678\",\r\n    \"virtualAccountNo\": \"123456789012345678\",\r\n    \"virtualAccountName\": \"Jokul Doe\",\r\n    \"virtualAccountEmail\": \"\",\r\n    \"virtualAccountPhone\": \"\",\r\n    \"trxId\": \"\",\r\n    \"paymentRequestId\": \"202202111031031234500001136962\",\r\n    \"channelCode\": 6011,\r\n    \"hashedSourceAccountNo\": \"\",\r\n    \"sourceBankCode\": \"014\",\r\n    \"paidAmount\": {\r\n        \"value\": \"100000.00\",\r\n        \"currency\": \"IDR\"\r\n    },\r\n    \"cumulativePaymentAmount\": null,\r\n    \"paidBills\": \"\",\r\n    \"totalAmount\": {\r\n        \"value\": \"100000.00\",\r\n        \"currency\": \"IDR\"\r\n    },\r\n    \"trxDateTime\": \"2022-02-12T17:29:57+07:00\",\r\n    \"referenceNo\": \"00113696201\",\r\n    \"journalNum\": \"\",\r\n    \"paymentType\": \"\",\r\n    \"flagAdvise\": \"N\",\r\n    \"subCompany\": \"00000\",\r\n    \"billDetails\": [\r\n        {\r\n            \"billCode\": \"\",\r\n            \"billNo\": \"123456789012345678\",\r\n            \"billName\": \"\",\r\n            \"billShortName\": \"\",\r\n            \"billDescription\": {\r\n                \"english\": \"Maintance\",\r\n                \"indonesia\": \"Pemeliharaan\"\r\n            },\r\n            \"billSubCompany\": \"00000\",\r\n            \"billAmount\": {\r\n                \"value\": \"10000.00\",\r\n                \"currency\": \"IDR\"\r\n            },\r\n            \"additionalInfo\": {\r\n                \"value\": \"Test Additional Data\"\r\n            },\r\n            \"billReferenceNo\": \"00113696201\"\r\n        }\r\n    ],\r\n    \"freeTexts\": [],\r\n    \"additionalInfo\": {\r\n        \"value\": \"\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/va-payment/payment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"va-payment",
+										"payment"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1149"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47d-ysXexTFEi9u2eMjGcu9Mfq0qftU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Aug 2023 04:10:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": \"2002400\",\n    \"responseMessage\": \"Successful\",\n    \"virtualAccountData\": {\n        \"paymentFlagReason\": {\n            \"english\": \"Success\",\n            \"indonesia\": \"Sukses\"\n        },\n        \"partnerServiceId\": \"12345\",\n        \"customerNo\": \"123456789012345678\",\n        \"virtualAccountNo\": \"123456789012345678\",\n        \"virtualAccountName\": \"Jokul Doe\",\n        \"virtualAccountEmail\": \"john@email.com\",\n        \"virtualAccountPhone\": \"6281828384858\",\n        \"trxId\": \"\",\n        \"paymentRequestId\": \"202202111031031234500001136962\",\n        \"paidAmount\": {\n            \"value\": \"100000.00\",\n            \"currency\": \"IDR\"\n        },\n        \"paidBills\": \"\",\n        \"totalAmount\": {\n            \"value\": \"100000.00\",\n            \"currency\": \"IDR\"\n        },\n        \"trxDateTime\": \"2022-02-12T17:29:57+07:00\",\n        \"referenceNo\": \"00113696201\",\n        \"journalNum\": \"\",\n        \"paymentType\": \"\",\n        \"flagAdvise\": \"N\",\n        \"paymentFlagStatus\": \"00\",\n        \"billDetails\": [\n            {\n                \"billerReferenceId\": \"00113696201\",\n                \"billCode\": \"\",\n                \"billNo\": \"123456789012345678\",\n                \"billName\": \"Bill A for Jan\",\n                \"billShortName\": \"Bill A\",\n                \"billDescription\": {\n                    \"english\": \"Maintance\",\n                    \"indonesia\": \"Pemeliharaan\"\n                },\n                \"billSubCompany\": \"00000\",\n                \"billAmount\": {\n                    \"value\": \"100000.00\",\n                    \"currency\": \"IDR\"\n                },\n                \"additionalInfo\": {},\n                \"status\": \"00\",\n                \"reason\": {\n                    \"english\": \"Success\",\n                    \"indonesia\": \"Sukses\"\n                }\n            }\n        ],\n        \"freeTexts\": [\n            {\n                \"english\": \"Free text\",\n                \"indonesia\": \"Tulisan bebas\"\n            }\n        ]\n    },\n    \"additionalInfo\": {}\n}"
+						},
+						{
+							"name": "Response Payment Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"partnerServiceId\": \"1300112345\",\r\n    \"customerNo\": \"123456789012345678\",\r\n    \"virtualAccountNo\": \"123456789012345678\",\r\n    \"virtualAccountName\": \"Jokul Doe\",\r\n    \"virtualAccountEmail\": \"\",\r\n    \"virtualAccountPhone\": \"\",\r\n    \"trxId\": \"\",\r\n    \"paymentRequestId\": \"202202111031031234500001136962\",\r\n    \"channelCode\": 6011,\r\n    \"hashedSourceAccountNo\": \"\",\r\n    \"sourceBankCode\": \"014\",\r\n    \"paidAmount\": {\r\n        \"value\": \"100000.00\",\r\n        \"currency\": \"IDR\"\r\n    },\r\n    \"cumulativePaymentAmount\": null,\r\n    \"paidBills\": \"\",\r\n    \"totalAmount\": {\r\n        \"value\": \"100000.00\",\r\n        \"currency\": \"IDR\"\r\n    },\r\n    \"trxDateTime\": \"2022-02-12T17:29:57+07:00\",\r\n    \"referenceNo\": \"00113696201\",\r\n    \"journalNum\": \"\",\r\n    \"paymentType\": \"\",\r\n    \"flagAdvise\": \"N\",\r\n    \"subCompany\": \"00000\",\r\n    \"billDetails\": [\r\n        {\r\n            \"billCode\": \"\",\r\n            \"billNo\": \"123456789012345678\",\r\n            \"billName\": \"\",\r\n            \"billShortName\": \"\",\r\n            \"billDescription\": {\r\n                \"english\": \"Maintance\",\r\n                \"indonesia\": \"Pemeliharaan\"\r\n            },\r\n            \"billSubCompany\": \"00000\",\r\n            \"billAmount\": {\r\n                \"value\": \"10000.00\",\r\n                \"currency\": \"IDR\"\r\n            },\r\n            \"additionalInfo\": {\r\n                \"value\": \"Test Additional Data\"\r\n            },\r\n            \"billReferenceNo\": \"00113696201\"\r\n        }\r\n    ],\r\n    \"freeTexts\": [],\r\n    \"additionalInfo\": {\r\n        \"value\": \"\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/va-payment/payment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"va-payment",
+										"payment"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1173"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"495-gpQm0QZfvovfixGhILId07nviQ4\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Aug 2023 04:11:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": \"4042514\",\n    \"responseMessage\": \"Bill has been paid\",\n    \"virtualAccountData\": {\n        \"paymentFlagReason\": {\n            \"english\": \"Payment Failed\",\n            \"indonesia\": \"Transaksi Gagal\"\n        },\n        \"partnerServiceId\": \"  12345\",\n        \"customerNo\": \"123456789012345678\",\n        \"virtualAccountNo\": \"123456789012345678\",\n        \"virtualAccountName\": \"Jokul Doe\",\n        \"virtualAccountEmail\": \"john@email.com\",\n        \"virtualAccountPhone\": \"6281828384858\",\n        \"trxId\": \"\",\n        \"paymentRequestId\": \"202202111031031234500001136962\",\n        \"paidAmount\": {\n            \"value\": \"100000.00\",\n            \"currency\": \"IDR\"\n        },\n        \"paidBills\": \"\",\n        \"totalAmount\": {\n            \"value\": \"100000.00\",\n            \"currency\": \"IDR\"\n        },\n        \"trxDateTime\": \"2022-02-12T17:29:57+07:00\",\n        \"referenceNo\": \"00113696201\",\n        \"journalNum\": \"\",\n        \"paymentType\": \"\",\n        \"flagAdvise\": \"N\",\n        \"paymentFlagStatus\": \"01\",\n        \"billDetails\": [\n            {\n                \"billerReferenceId\": \"00113696201\",\n                \"billCode\": \"\",\n                \"billNo\": \"123456789012345678\",\n                \"billName\": \"Bill A for Jan\",\n                \"billShortName\": \"Bill A\",\n                \"billDescription\": {\n                    \"english\": \"Maintance\",\n                    \"indonesia\": \"Pemeliharaan\"\n                },\n                \"billSubCompany\": \"00000\",\n                \"billAmount\": {\n                    \"value\": \"100000.00\",\n                    \"currency\": \"IDR\"\n                },\n                \"additionalInfo\": {},\n                \"status\": \"01\",\n                \"reason\": {\n                    \"english\": \"Failed\",\n                    \"indonesia\": \"Gagal\"\n                }\n            }\n        ],\n        \"freeTexts\": [\n            {\n                \"english\": \"Free text\",\n                \"indonesia\": \"Tulisan bebas\"\n            }\n        ]\n    },\n    \"additionalInfo\": {}\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "VA-BRI",
+			"item": [
+				{
+					"name": "Inquiry",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"partnerServiceId\": \"  77777\",\r\n    \"customerNo\": \"1234567\",\r\n    \"virtualAccountNo\": \"  9000134332351210898911\",\r\n    \"trxDateInit\": \"2022-02-12T17:29:57+07:00\",\r\n    \"channelCode\": 1,\r\n    \"sourceBankCode\": \"002\",\r\n    \"passApp\": \"TE521*!%sysSit|9\",\r\n    \"inquiryRequestId\": \"202202110909311234500001136962\",\r\n    \"additionalInfo\": {\r\n        \"idApp\": \"SYSBRIVA\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/briva/API/BRIVA/Inquiry",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"briva",
+								"API",
+								"BRIVA",
+								"Inquiry"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response Inquiry Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"partnerServiceId\": \"  77777\",\r\n    \"customerNo\": \"1234567\",\r\n    \"virtualAccountNo\": \"  9000134332351210898911\",\r\n    \"trxDateInit\": \"2022-02-12T17:29:57+07:00\",\r\n    \"channelCode\": 1,\r\n    \"sourceBankCode\": \"002\",\r\n    \"passApp\": \"TE521*!%sysSit|9\",\r\n    \"inquiryRequestId\": \"202202110909311234500001136962\",\r\n    \"additionalInfo\": {\r\n        \"idApp\": \"SYSBRIVA\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/briva/API/BRIVA/Inquiry",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"briva",
+										"API",
+										"BRIVA",
+										"Inquiry"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "433"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b1-KZzNaptMTVNsY+tugRwEddXtMaA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jul 2023 07:31:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": \"2002400\",\n    \"responseMessage\": \"Successful\",\n    \"virtualAccountData\": {\n        \"partnerServiceId\": \" 77777\",\n        \"virtualAccountNo\": \"123456789012345678\",\n        \"virtualAccountName\": \"Jokul Doe\",\n        \"inquiryRequestId\": \"202202110909311234500001136962\",\n        \"totalAmount\": {\n            \"value\": \"100000.00\",\n            \"currency\": \"IDR\"\n        },\n        \"inquirtStatus\": \"00\",\n        \"inqueryReason\": {\n            \"english\": \"Success\",\n            \"indonesia\": \"Sukses\"\n        },\n        \"additionalInfo\": {\n            \"idApp\": \"SYSBRIVA\",\n            \"info1\": \"Info 1 harus diisi\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Response Inquiry Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"partnerServiceId\": \"  77777\",\r\n    \"customerNo\": \"1234567\",\r\n    \"virtualAccountNo\": \"  9000134332351210898911\",\r\n    \"trxDateInit\": \"2022-02-12T17:29:57+07:00\",\r\n    \"channelCode\": 1,\r\n    \"sourceBankCode\": \"002\",\r\n    \"passApp\": \"TE521*!%sysSit|9\",\r\n    \"inquiryRequestId\": \"202202110909311234500001136962\",\r\n    \"additionalInfo\": {\r\n        \"idApp\": \"\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/briva/API/BRIVA/Inquiry",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"briva",
+										"API",
+										"BRIVA",
+										"Inquiry"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38-J3qmgrvLKJO4ybuxOsMILMS10iI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jul 2023 07:32:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": \"4042412\",\n    \"responseMessage\": \"Paid Bill\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"partnerServiceId\": \"  12345\",\r\n    \"customerNo\": \"123456789012345678\",\r\n    \"virtualAccountNo\": \"123456789012345678\",\r\n    \"virtualAccountName\": \"Jokul Doe\",\r\n    \"paidAmount\": {\r\n        \"value\": \"100000.00\",\r\n        \"currency\": \"IDR\"\r\n    },\r\n    \"trxDateTime\": \"2022-02-12T17:29:57+07:00\",\r\n    \"channelCode\": \"002\",\r\n    \"sourceBankCode\": \"014\",\r\n    \"trxId\": \"\",\r\n    \"paymentRequestId\": \"202202111031031234500001136962\",\r\n    \"hashedSourceAccountNo\": \"\",\r\n    \"additionalInfo\": {\r\n        \"idApp\": \"SYSBRIVA\",\r\n        \"passApp\": \"TE521*!%sysSit|9\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/briva/API/BRIVA/Payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"briva",
+								"API",
+								"BRIVA",
+								"Payment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response Payment Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"partnerServiceId\": \"  12345\",\r\n    \"customerNo\": \"123456789012345678\",\r\n    \"virtualAccountNo\": \"123456789012345678\",\r\n    \"virtualAccountName\": \"Jokul Doe\",\r\n    \"paidAmount\": {\r\n        \"value\": \"100000.00\",\r\n        \"currency\": \"IDR\"\r\n    },\r\n    \"trxDateTime\": \"2022-02-12T17:29:57+07:00\",\r\n    \"channelCode\": \"002\",\r\n    \"sourceBankCode\": \"014\",\r\n    \"trxId\": \"\",\r\n    \"paymentRequestId\": \"202202111031031234500001136962\",\r\n    \"hashedSourceAccountNo\": \"\",\r\n    \"additionalInfo\": {\r\n        \"idApp\": \"SYSBRIVA\",\r\n        \"passApp\": \"TE521*!%sysSit|9\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/briva/API/BRIVA/Payment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"briva",
+										"API",
+										"BRIVA",
+										"Payment"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "502"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f6-TpIHaIFQbE5Sx8lfCHbvF3Jc8k8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jul 2023 08:28:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": \"2002400\",\n    \"responseMessage\": \"Successful\",\n    \"virtualAccountData\": {\n        \"partnerServiceId\": \"12345\",\n        \"customerNo\": \"123456789012345678\",\n        \"virtualAccountNo\": \"123456789012345678\",\n        \"virtualAccountName\": \"Jokul Doe\",\n        \"paymentRequestId\": \"202202111031031234500001136962\",\n        \"paidAmount\": {\n            \"value\": \"100000.00\",\n            \"currency\": \"IDR\"\n        },\n        \"paymentFlagStatus\": \"00\",\n        \"paymentFlagReason\": {\n            \"english\": \"Success\",\n            \"indonesia\": \"Sukses\"\n        },\n        \"additionalInfo\": {\n            \"idApp\": \"SYSBRIVA\",\n            \"passApp\": \"TE521*!%sysSit|9\",\n            \"info1\": \"Info 1 harus diisi\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Response Payment Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"partnerServiceId\": \"  12345\",\r\n    \"customerNo\": \"123456789012345678\",\r\n    \"virtualAccountNo\": \"123456789012345678\",\r\n    \"virtualAccountName\": \"Jokul Doe\",\r\n    \"paidAmount\": {\r\n        \"value\": \"100000.00\",\r\n        \"currency\": \"IDR\"\r\n    },\r\n    \"trxDateTime\": \"2022-02-12T17:29:57+07:00\",\r\n    \"channelCode\": \"002\",\r\n    \"sourceBankCode\": \"014\",\r\n    \"trxId\": \"\",\r\n    \"paymentRequestId\": \"202202111031031234500001136962\",\r\n    \"hashedSourceAccountNo\": \"\",\r\n    \"additionalInfo\": {\r\n        \"idApp\": \"\",\r\n        \"passApp\": \"TE521*!%sysSit|9\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/briva/API/BRIVA/Payment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"briva",
+										"API",
+										"BRIVA",
+										"Payment"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-PKNmC4tJ86wuhfWaBdkQHCz5eVo\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jul 2023 08:28:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseCode\": \"4042514\",\n    \"responseMessage\": \"Invalid Bill\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

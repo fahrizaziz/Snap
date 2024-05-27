@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: snap_bi
+    restart: always
+    # image: endiazequitylife/snap-bi:1.0.0
+    environment:
+     DB_HOST: ${DB_HOST}
+     DB_PORT: ${DB_PORT}
+     DB_USER: ${DB_USER}
+     DB_PASSWORD: ${DB_PASSWORD}
+     DB_NAME: ${DB_NAME}
+    env_file:
+      - .env
+    # network_mode: host
+    ports:
+      - '${PORT}:${PORT}'
+    volumes:
+      - /data-log/api-bi-snap:/app/logs:rx
+      - ./src:/app/src
+    # extra_hosts:
+    #   - uat-db01.elife.co.id:192.168.12.10
+    #   - uat-mw02.myequity.id:172.16.201.132
+    #   - uat-ws02.elife.co.id:192.168.12.12

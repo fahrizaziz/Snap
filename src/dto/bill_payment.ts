@@ -1,0 +1,35 @@
+export class BillPayment {
+  bill_payment_id: string;
+  bill_payment_code: string;
+  bank_partner: string;
+  bank_va_code: string;
+  bank_core_code: string;
+  received_mode_PL: string;
+  bank_state_seq_no: string;
+  status: string;
+  account_bank_received: string;
+  request_id: string;
+  bank_channel_code: string;
+  notes: string;
+  customer_name: string;
+  currency: string;
+  paid_amount: number;
+  total_amount: number;
+  sub_company: string;
+  recorded_date_PL: string = null;
+  reference_bill_code: string;
+  reference_bank: string;
+  is_advice: string;
+  additional_data: string;
+  created_by = 'SYS';
+  created_date: Date;
+  modified_by = 'SYS';
+  modified_date: Date;
+  is_active = '1';
+  customer_number: string;
+  transaction_date: string;
+  seq_number: string;
+  policy_no: string;
+  transaksi_id: string;
+  ekternal_id: string;
+}
